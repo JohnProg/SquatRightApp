@@ -29,10 +29,7 @@ var SquatRight = React.createClass({
     return (
       <View style={styles.container}>
 				<Text>Squat Right App!!!</Text>
-				<Text>{this.state.page}</Text>
-				<Main 
-				handleStart={this.handleStart} 
-				handleInstructions={this.handleInstructions} />
+				{this.handlePage()}
 			</View>
     );
   },
@@ -45,6 +42,20 @@ var SquatRight = React.createClass({
 		this.setState({
 			page: 'instructions'
 		});
+	},
+	handlePage: function () {
+		switch(this.state.page) {
+			case 'start':
+				return <Start />;
+				break;
+			case 'instructions':
+				return <Instructions />;
+				break;
+			default:
+				return <Main 
+								handleStart={this.handleStart} 
+								handleInstructions={this.handleInstructions} />;
+		}
 	}
 	
 });
