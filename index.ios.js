@@ -13,6 +13,7 @@ var {
   StyleSheet,
   Text,
   View,
+  Image,
   TouchableOpacity,
 } = React;
 
@@ -24,15 +25,21 @@ var SquatRight = React.createClass({
 			page: ''
 		}
 	},
-		
+	//----------------------------Render	
   render: function() {
     return (
-      <View style={styles.container}>
-				<Text>Squat Right App!!!</Text>
+      <View 
+			style={styles.container}>
+				<View 
+				style={styles.logo}>
+					<Text style={styles.text}>SquatRight</Text>
+				</View>
 				{this.handlePage()}
+			
 			</View>
     );
   },
+	//------------------------------End Render
 	handleStart: function () {
 		this.setState({
 			page: 'start'
@@ -60,14 +67,25 @@ var SquatRight = React.createClass({
 	
 });
 
+//--------------------------------------styles
 var styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
+    justifyContent: 'space-around',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
   },
- 
+  logo: {
+		flex: 1,
+		flexDirection: 'row',
+		alignItems: 'center',
+		justifyContent: 'center'
+	},
+	text: {
+		fontSize: 60,
+		fontWeight: 'bold',
+		fontFamily: 'verdana',
+	},
+	
 });
 
 AppRegistry.registerComponent('SquatRight', () => SquatRight);

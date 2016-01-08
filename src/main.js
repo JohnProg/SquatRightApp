@@ -12,7 +12,7 @@ var {
 module.exports = React.createClass({
 	render: function () {
 		return (
-			<View>
+			<View style={styles.container}>
 			<Button press={this.props.handleStart}>Start</Button>
 			<Button press={this.props.handleInstructions}>Instructions</Button>
 			</View>
@@ -21,6 +21,8 @@ module.exports = React.createClass({
 });
 
 var styles = StyleSheet.create({
-	
+	container: {
+		flex: 1
+	}
 });
 
