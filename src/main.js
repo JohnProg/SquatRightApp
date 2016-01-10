@@ -10,11 +10,19 @@ var {
 
 	
 module.exports = React.createClass({
+	onPressStart: function() {
+		this.props.navigator.push({name: 'start'});
+	},
+	onPressInstructions: function() {
+		this.props.navigator.push({name: 'instructions'});
+	},
+	
+	
 	render: function () {
 		return (
 			<View style={styles.container}>
-			<Button press={this.props.handleStart}>Start</Button>
-			<Button press={this.props.handleInstructions}>Instructions</Button>
+			<Button press={this.onPressStart}>Start</Button>
+			<Button press={this.onPressInstructions}>Instructions</Button>
 			</View>
 		)
 }
@@ -22,7 +30,8 @@ module.exports = React.createClass({
 
 var styles = StyleSheet.create({
 	container: {
-		flex: 1
+		flex: 1,
+		backgroundColor: 'rgba(0,0,0,0.0)',
 	}
 });
 
