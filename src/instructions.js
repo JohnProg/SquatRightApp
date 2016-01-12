@@ -60,11 +60,15 @@ var styles = StyleSheet.create({
 		backgroundColor: 'rgba(0,0,0,0.8)',
 		fontSize: 60,
 		textAlign: 'center',
+		padding: 20
 	},
 	postHeader: {
 		padding: 20,
 		backgroundColor: 'rgba(255,255,255,0.8)',
 	},
+	instructions: {
+		alignItems: 'center'
+	}
 });
 
 module.exports = Instructions;
