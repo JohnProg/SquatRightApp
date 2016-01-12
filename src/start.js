@@ -12,11 +12,12 @@ var {
   View,
   DeviceEventEmitter,
   TouchableOpacity,
+  VibrationIOS,
 } = React;
 var {
     Gyroscope
 } = require('NativeModules');	
-Gyroscope.setGyroUpdateInterval(0.2);
+Gyroscope.setGyroUpdateInterval(0.1);
 
 
 var Start = React.createClass({
@@ -30,11 +31,14 @@ var Start = React.createClass({
 },
 	componentDidMount: function () {
 		DeviceEventEmitter.addListener('GyroData', function (data) {
-			this.setState({
-				x: (data.rotationRate.x.toFixed(2) * 100),
-				//y: data.rotationRate.y,
-				//z: data.rotationRate.z
-			});
+if(((data.rotationRate.x + 1) * 100) > 100){
+			VibrationIOS.vibrate();
+		}
+//			this.setState({
+//				x: (data.rotationRate.x.toFixed(2) * 100),
+//				//y: data.rotationRate.y,
+//				//z: data.rotationRate.z
+//			});
 		}.bind(this));
 	},
 	componentWillUnmount: function () {
@@ -43,15 +47,16 @@ var Start = React.createClass({
 	handleStart: function () {
 		Gyroscope.startGyroUpdates();
 		this.setState({gyro: true});
+		
 	},
 	handleStop: function () {
 		Gyroscope.stopGyroUpdates();
-		this.setState({
-			x: 0,
-			//y: 0,
-			//z: 0,
-			gyro: false
-		});
+//		this.setState({
+//			x: 0,
+//			//y: 0,
+//			//z: 0,
+//			gyro: false
+//		});
 	},
 		
   render: function() {
@@ -59,7 +64,7 @@ var Start = React.createClass({
       <View style={styles.container}>
 				<Text>Start</Text>
 				
-				<Text>x: {this.state.x}</Text>
+				{/*<Text>x: {this.state.x}</Text>*/}
         {/*<Text>y: {this.state.y}</Text>*/}
         {/*<Text>z: {this.state.z}</Text>*/}
 				
