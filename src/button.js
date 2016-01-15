@@ -25,6 +25,7 @@ var styles = StyleSheet.create({
 		backgroundColor: 'D93908',
 		paddingTop: 20,
 		paddingRight: 30,
+		paddingLeft: 3,
 		marginBottom: 8,
 	},
 	text: {

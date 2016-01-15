@@ -56,8 +56,6 @@ var styles = StyleSheet.create({
 		resizeMode: 'contain',
 		justifyContent: 'center',
 		alignItems: 'center',
-		borderColor: 'white',
-		borderWidth: 3
 	},
 	logo: {
 		flex: 1,
