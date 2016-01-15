@@ -43,6 +43,7 @@ var SquatRight = React.createClass({
 var styles = StyleSheet.create({
   container: {
     flex: 1,
+		backgroundColor: 'black',
   }
 });
 

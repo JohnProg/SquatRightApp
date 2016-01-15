@@ -23,8 +23,8 @@ module.exports = React.createClass({
 		return (
 		<View style={styles.container}>
       	<Image
-      				source={require('./../images/barbell.jpg')}
-      				style={styles.container}>
+      				source={require('./../images/left.png')}
+      				style={styles.imageContainer}>
       				
       					<View 
       					style={styles.logo}>
@@ -51,9 +51,16 @@ var styles = StyleSheet.create({
 		justifyContent: 'center',
 		alignItems: 'center'
 	},
+	imageContainer: {
+		flex: 1,
+		resizeMode: 'contain',
+		justifyContent: 'center',
+		alignItems: 'center',
+		borderColor: 'white',
+		borderWidth: 3
+	},
 	logo: {
 		flex: 1,
-		flexDirection: 'row',
 		alignItems: 'center',
 		justifyContent: 'center',
 		backgroundColor: 'rgba(0,0,0,0.0)',
@@ -61,11 +68,13 @@ var styles = StyleSheet.create({
 	text: {
 		fontSize: 60,
 		fontWeight: 'bold',
-		fontFamily: 'verdana',
+		fontFamily: 'arial',
+		color: '#D93908'
 	},
 	menu: {
 		flex: 1,
 		justifyContent: 'flex-start',
+		alignItems: 'flex-start',
 	}
 });
 
