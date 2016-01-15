@@ -5,78 +5,36 @@
 'use strict';
 
 var React = require('react-native');
+var DeviceMotion = require('./../DeviceMotion.ios.js');
 var {
-  AppRegistry,
   StyleSheet,
   Text,
   View,
-  DeviceEventEmitter,
   TouchableOpacity,
   VibrationIOS,
 } = React;
-var {
-    Gyroscope
-} = require('NativeModules');	
-Gyroscope.setGyroUpdateInterval(0.1);
+
 
 
 var Start = React.createClass({
-	getInitialState: function() {
-	return {
-	x: 0,
-	y: 0,
-	z: 0,
-	gyro: false
-}
-},
+	getInitialState: function () {
+    return {
+      motionData: null
+    };
+  },
 	componentDidMount: function () {
-		DeviceEventEmitter.addListener('GyroData', function (data) {
-if(((data.rotationRate.x + 1) * 100) > 100){
-			VibrationIOS.vibrate();
-		}
-//			this.setState({
-//				x: (data.rotationRate.x.toFixed(2) * 100),
-//				//y: data.rotationRate.y,
-//				//z: data.rotationRate.z
-//			});
-		}.bind(this));
-	},
-	componentWillUnmount: function () {
-		Gyroscope.stopGyroUpdates();
-	},
-	handleStart: function () {
-		Gyroscope.startGyroUpdates();
-		this.setState({gyro: true});
-		
-	},
-	handleStop: function () {
-		Gyroscope.stopGyroUpdates();
-//		this.setState({
-//			x: 0,
-//			//y: 0,
-//			//z: 0,
-//			gyro: false
-//		});
-	},
-		
+    DeviceMotion.startDeviceMotionUpdates(1000/60, (data) => {
+      if (data.attitude.pitch >= 0) {
+				VibrationIOS.vibrate()
+			}
+    });
+  },
   render: function() {
+		var motionData = this.state.motionData;
     return (
-      <View style={styles.container}>
-				<Text>Start</Text>
-				
-				{/*<Text>x: {this.state.x}</Text>*/}
-        {/*<Text>y: {this.state.y}</Text>*/}
-        {/*<Text>z: {this.state.z}</Text>*/}
-				
-				<TouchableOpacity onPress={this.handleStart}>
-					<Text>Start</Text>
-				</TouchableOpacity>
-				
-				<TouchableOpacity onPress={this.handleStop}>
-					<Text>Stop</Text>
-				</TouchableOpacity>
-			
-			</View>
+     <View style={styles.container}>
+     	<Text>hello</Text>
+     </View>
     );
   },
 	
