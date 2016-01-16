@@ -5,6 +5,7 @@
 'use strict';
 
 var React = require('react-native');
+var DeviceMotion = require('./../DeviceMotion.ios.js');
 var {
   StyleSheet,
   Text,
@@ -15,20 +16,26 @@ var {
 
 
 var Start = React.createClass({
-	getInitialState: function() {
-	return {
-	
-}
-},
-	
+
+	getInitialState: function () {
+    return {
+      motionData: null
+    };
+  },
+	componentDidMount: function () {
+    DeviceMotion.startDeviceMotionUpdates(1000/60, (data) => {
+      if (data.attitude.pitch >= 0) {
+				VibrationIOS.vibrate()
+			}
+    });
+  },
   render: function() {
+		var motionData = this.state.motionData;
     return (
-      <View style={styles.container}>
-				<Text>Start</Text>
-				
-				
-			
-			</View>
+
+     <View style={styles.container}>
+     	<Text>hello</Text>
+     </View>
     );
   },
 	

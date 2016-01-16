@@ -22,6 +22,11 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
+<<<<<<< HEAD
+=======
+		991042761C491C17009E867E /* RNTDeviceMotion.m in Sources */ = {isa = PBXBuildFile; fileRef = 991042751C491C17009E867E /* RNTDeviceMotion.m */; };
+		99532F661C3D207200397784 /* libRNMotionManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 99532F631C3D206600397784 /* libRNMotionManager.a */; };
+>>>>>>> deviceMotion
 		99532F681C3D214300397784 /* app.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 99532F671C3D214300397784 /* app.bundle */; };
 /* End PBXBuildFile section */
 
@@ -127,6 +132,12 @@
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
+<<<<<<< HEAD
+=======
+		991042741C491C17009E867E /* RNTDeviceMotion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RNTDeviceMotion.h; path = ../RNTDeviceMotion.h; sourceTree = "<group>"; };
+		991042751C491C17009E867E /* RNTDeviceMotion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RNTDeviceMotion.m; path = ../RNTDeviceMotion.m; sourceTree = "<group>"; };
+		99532F531C3D206600397784 /* RNMotionManager.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNMotionManager.xcodeproj; path = "../node_modules/react-native-motion-manager/RNMotionManager.xcodeproj"; sourceTree = "<group>"; };
+>>>>>>> deviceMotion
 		99532F671C3D214300397784 /* app.bundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = app.bundle; path = ../app.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -234,6 +245,8 @@
 		13B07FAE1A68108700A75B9A /* SquatRight */ = {
 			isa = PBXGroup;
 			children = (
+				991042741C491C17009E867E /* RNTDeviceMotion.h */,
+				991042751C491C17009E867E /* RNTDeviceMotion.m */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -549,6 +562,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				991042761C491C17009E867E /* RNTDeviceMotion.m in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);
