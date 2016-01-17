@@ -12,6 +12,7 @@ var {
   AppRegistry,
   StyleSheet,
 	Navigator,
+	StatusBarIOS,
 } = React;
 
 var ROUTES = {
@@ -21,6 +22,9 @@ var ROUTES = {
 }
 
 var SquatRight = React.createClass({
+	componentWillMount: function () {
+		StatusBarIOS.setHidden(true);
+	},
 	renderScene: function(route, navigator) {
 		var Component = ROUTES[route.name];
 		return <Component route={route} navigator={navigator} />

@@ -22,9 +22,7 @@ module.exports = React.createClass({
 	render: function () {
 		return (
 			<View style={styles.container}>
-				<View style={styles.statusBar}>
 				
-				</View>
 				<View 
 					style={styles.logo}>
 						<Image style={styles.logoShape} source={require('./../images/logoShape.png')}></Image>
@@ -48,12 +46,7 @@ var styles = StyleSheet.create({
 		flex: 1,
 		backgroundColor: 'black',
 	},
-	statusBar: {
-		height: 22,
-		backgroundColor: '#ffffff',
-//		borderBottomColor: 'black',
-//		borderBottomWidth: 2,
-	},
+	
 	logo: {
 		flexDirection: 'row',
 		alignItems: 'center',
