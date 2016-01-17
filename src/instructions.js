@@ -32,6 +32,7 @@ var Instructions = React.createClass({
 						<Text style={styles.item}>2 - Put your phone in your front pocket and wait for 2 vibrations.</Text>
 						<Text style={styles.item}>3 - Start squatting.</Text>
 						<Text style={styles.lastPoint}>The phone will vibrate each time you reach parallel on your squat.</Text>
+						<Text>Pull down from top of screen to exit.</Text>
 				</View>
 				
 				</View>

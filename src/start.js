@@ -24,16 +24,18 @@ var Start = React.createClass({
   },
 	componentDidMount: function () {
     DeviceMotion.startDeviceMotionUpdates(1000/60, (data) => {
-      if (data.attitude.pitch >= 0) {
+			console.log(data);
+      if (data.attitude.pitch <= 0) {
 				VibrationIOS.vibrate()
 			}
     });
   },
   render: function() {
-		var motionData = this.state.motionData;
     return (
      <View style={styles.container}>
-     	<Text>hello</Text>
+     	<Text>1 - Place phone in pocket with charging port pointing to the floor.</Text>
+     	<Text>2 - Squat and go deep enough to feel your phone vibrate.</Text>
+     	<Text>Pull down from top of screen to exit.</Text>
      </View>
     );
   },
