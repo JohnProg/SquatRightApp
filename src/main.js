@@ -25,7 +25,7 @@ module.exports = React.createClass({
       					<View 
       					style={styles.logo}>
 									<Image style={styles.logoShape} source={require('./../images/logoShape.png')}></Image>
-      						<Text style={styles.text}>SquatRight</Text>
+      						<Text style={styles.text}>quatRight</Text>
       					</View>
       					
       					<View style={styles.menu}>
@@ -49,7 +49,7 @@ var styles = StyleSheet.create({
 	logo: {
 		flexDirection: 'row',
 		alignItems: 'center',
-		justifyContent: 'space-around',
+		justifyContent: 'center',
 		backgroundColor: '#7A0001',
 		height: 100,
 		marginTop: 20,
@@ -57,6 +57,7 @@ var styles = StyleSheet.create({
 	logoShape: {
 		height: 100,
 		width: 65,
+		marginRight: 3,
 	},
 	text: {
 		fontSize: 60,
