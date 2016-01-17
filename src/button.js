@@ -22,16 +22,16 @@ module.exports = React.createClass({
 
 var styles = StyleSheet.create({
 	button: {
-		backgroundColor: 'D93908',
+		backgroundColor: '#7A0001',
 		paddingTop: 20,
 		paddingRight: 30,
 		paddingLeft: 3,
-		marginBottom: 8,
+		marginBottom: 10,
 	},
 	text: {
-		color: 'white',
+		color: '#D93908',
 		fontSize: 40,
 		fontWeight: 'bold',
-		fontFamily: 'arial',
+		fontFamily: 'AvenirNext-Bold',
 	},
 });
