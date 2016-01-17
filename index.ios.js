@@ -29,7 +29,7 @@ var SquatRight = React.createClass({
     return (
       <Navigator 
 			style={styles.container}
-			initialRoute={{name: 'start'}}
+			initialRoute={{name: 'main'}}
 			renderScene={this.renderScene}
 			configureScene={() => {return Navigator.SceneConfigs.FloatFromBottom;}}
 			
