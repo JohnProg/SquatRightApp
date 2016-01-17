@@ -22,12 +22,11 @@ module.exports = React.createClass({
 	render: function () {
 		return (
 		<View style={styles.container}>
-      	<Image
-      				source={require('./../images/left.png')}
-      				style={styles.imageContainer}>
+      	
       				
       					<View 
       					style={styles.logo}>
+									<Image style={styles.logoShape} source={require('./../images/logoShape.png')}></Image>
       						<Text style={styles.text}>SquatRight</Text>
       					</View>
       					
@@ -39,7 +38,7 @@ module.exports = React.createClass({
 									press={this.onPressInstructions}>Instructions</Button>
 								</View>
       				
-      				</Image>
+      				
       </View>
 		)
 }
@@ -48,30 +47,30 @@ module.exports = React.createClass({
 var styles = StyleSheet.create({
 	container: {
 		flex: 1,
-		justifyContent: 'center',
-		alignItems: 'center'
+		backgroundColor: 'black',
 	},
-	imageContainer: {
-		flex: 1,
-		resizeMode: 'contain',
-		justifyContent: 'center',
-		alignItems: 'center',
-	},
+	
 	logo: {
-		flex: 1,
+		flexDirection: 'row',
 		alignItems: 'center',
-		justifyContent: 'center',
-		backgroundColor: 'rgba(0,0,0,0.0)',
+		justifyContent: 'space-around',
+		backgroundColor: '#7A0001',
+		height: 100,
+		marginTop: 20,
+	},
+	logoShape: {
+		height: 100,
+		width: 65,
 	},
 	text: {
 		fontSize: 60,
 		fontWeight: 'bold',
-		fontFamily: 'arial',
+		fontFamily: 'AvenirNext-Heavy',
 		color: '#D93908'
 	},
 	menu: {
 		flex: 1,
-		justifyContent: 'flex-start',
+		justifyContent: 'center',
 		alignItems: 'flex-start',
 	}
 });
