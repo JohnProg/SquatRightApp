@@ -2,6 +2,7 @@
 
 var React = require('react-native');
 var Button = require('./button');
+var Video = require('react-native-video');
 var {
 	Text,
 	StyleSheet,
@@ -22,7 +23,13 @@ module.exports = React.createClass({
 	render: function () {
 		return (
 			<View style={styles.container}>
-				
+				<Video source={{uri: 'bg'}}
+				rate={1.0}
+				muted={true}
+				resizeMode="cover"
+				repeat={true}
+				style={styles.backgroundVideo} />
+			
 				<View 
 					style={styles.logo}>
 						<Image style={styles.logoShape} source={require('./../images/logoShape.png')}></Image>
@@ -44,8 +51,15 @@ module.exports = React.createClass({
 var styles = StyleSheet.create({
 	container: {
 		flex: 1,
-		backgroundColor: 'black',
+		backgroundColor: 'rgba(217, 57, 8, 0.2)',
 	},
+	backgroundVideo: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    bottom: 0,
+    right: 0,
+  },
 	
 	logo: {
 		flexDirection: 'row',
