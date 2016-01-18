@@ -25,12 +25,14 @@ var Start = React.createClass({
   },
 	componentDidMount: function () {
     DeviceMotion.startDeviceMotionUpdates(1000/60, (data) => {
-			console.log(data);
       if (data.attitude.pitch <= 0) {
 				VibrationIOS.vibrate()
 			}
     });
   },
+	componentWillUnmount: function () {
+		DeviceMotion.stopDeviceMotionUpdates();
+	},
 	handleBack: function() {
 		this.props.navigator.pop();
 	},
@@ -39,8 +41,7 @@ var Start = React.createClass({
      <View style={styles.container}>
      	<View style={styles.back}>
      		<TouchableOpacity onPress={this.handleBack}>
-     			<Text style={styles.boldText}>Back</Text>
-     			<Image source={require('./../images/downArrow.png')}></Image>
+     			<Image style={styles.backBtn} source={require('./../images/back.png')}></Image>
      		</TouchableOpacity>
      	</View>
 			<View style={styles.illustration}>
@@ -67,9 +68,14 @@ var styles = StyleSheet.create({
     backgroundColor: '#7A0001',
   },
 	back: {
-		flex: 1,
+		height: 75,
 		justifyContent: 'center',
-		alignItems: 'center',
+		alignItems: 'flex-start',
+		padding: 20
+	},
+	backBtn: {
+		width: 35,
+		height: 35,
 	},
 	boldText: {
 		fontFamily: 'AvenirNext-Bold',
@@ -77,7 +83,7 @@ var styles = StyleSheet.create({
 		fontSize: 30,
 	},
 	illustration: {
-		height: 300,
+		flex: 1,
 		justifyContent: 'center',
 		alignItems: 'center',
 		backgroundColor: '#330001'
@@ -92,13 +98,17 @@ var styles = StyleSheet.create({
 		justifyContent: 'center',
 	},
 	textBox: {
+		flex: 1,
+		alignItems: 'stretch',
 		backgroundColor: 'white',
-		padding: 10
+		padding: 20,
 	},
 	text: {
 		color: '#D93908',
 		fontFamily: 'AvenirNext-Regular',
-		fontSize: 16,
+		fontSize: 20,
+		margin: 5,
+//		lineHeight: 5,
 	}
 });
 
