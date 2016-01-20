@@ -49,9 +49,9 @@ var Start = React.createClass({
 			</View>
 			<View style={styles.bullets}>
 				<View style={styles.textBox}>
-					<Text style={styles.text}>• Put phone in front pocket in upright position, as see in illustration above.</Text>
-					<Text style={styles.text}>• Begin your squat set.</Text>
-					<Text style={styles.text}>• Your phone will vibrate each time you have reached parallel depth and beyond.</Text>
+					<Text style={styles.text}>Put phone in front pocket in upright position. See illustration above.</Text>
+					<Text style={styles.text}>Start your squat set.</Text>
+					<Text style={styles.text}>Phone will vibrate each time you have reached parallel depth and beyond.</Text>
 				</View>
 			</View>
      </View>
@@ -65,7 +65,7 @@ var styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'stretch',
-    backgroundColor: '#7A0001',
+    backgroundColor: '#530000',
   },
 	back: {
 		height: 75,
