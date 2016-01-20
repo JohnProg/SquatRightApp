@@ -39,21 +39,39 @@ var Start = React.createClass({
   render: function() {
     return (
      <View style={styles.container}>
-     	<View style={styles.back}>
-     		<TouchableOpacity onPress={this.handleBack}>
-     			<Image style={styles.backBtn} source={require('./../images/back.png')}></Image>
-     		</TouchableOpacity>
+{/****** top view with x button and heading ******/}
+			<View style={styles.back}>
+				<View style={styles.xView}>
+					<TouchableOpacity onPress={this.handleBack}>
+						<Image style={styles.backBtn} source={require('./../images/x.jpg')}></Image>
+					</TouchableOpacity>
+				</View>
+				<View style={styles.headerView}>
+					<Text style={styles.header}>Start</Text>
+				</View>
+				<View style={styles.fillerView}>
+				
+				</View>
      	</View>
+{/*Middle view with image*/}
 			<View style={styles.illustration}>
-				<Image source={require('./../images/startIllustration.png')}></Image>
+				<Image style={styles.image} source={require('./../images/model.png')}></Image>
 			</View>
+{/****** bottom view with instructions ******/}
 			<View style={styles.bullets}>
 				<View style={styles.textBox}>
-					<Text style={styles.text}>Put phone in front pocket in upright position. See illustration above.</Text>
-					<Text style={styles.text}>Start your squat set.</Text>
-					<Text style={styles.text}>Phone will vibrate each time you have reached parallel depth and beyond.</Text>
+					<View style={styles.leftBorder}>
+						<Text style={styles.text}>Put phone in front pocket in upright position. See photo above.</Text>
+					</View>
+					<View style={styles.leftBorder}>
+						<Text style={styles.text}>Start your squat set.</Text>
+					</View>
+					<View style={styles.leftBorder}>
+						<Text style={styles.text}>Phone will vibrate each time you have reached parallel depth and beyond.</Text>
+					</View>
 				</View>
 			</View>
+						
      </View>
     );
   },
@@ -68,29 +86,43 @@ var styles = StyleSheet.create({
     backgroundColor: '#530000',
   },
 	back: {
-		height: 75,
-		justifyContent: 'center',
-		alignItems: 'flex-start',
-		padding: 20
+		height: 60,
+		flexDirection: 'row',
+
 	},
 	backBtn: {
-		width: 35,
-		height: 35,
+		width: 40,
+		height: 40,
 	},
-	boldText: {
+	xView: {
+		flex: 1,
+		alignItems: 'flex-start',
+		justifyContent: 'center',
+		paddingLeft: 10,
+	},
+	headerView: {
+		flex: 1,
+		alignItems: 'center',
+		justifyContent: 'center'
+	},
+	fillerView: {
+		flex: 1,
+	},
+	header: {
 		fontFamily: 'AvenirNext-Bold',
-		color: '#D93908',
-		fontSize: 30,
+		fontSize: 40,
+		color: 'D93908',
+		textAlign: 'center',
 	},
 	illustration: {
-		flex: 1,
+		height: 300,
 		justifyContent: 'center',
 		alignItems: 'center',
-		backgroundColor: '#330001'
+		backgroundColor: '#3b0000'
 	},
 	image: {
 		height: 300,
-		width: 200,
+		width: 230,
 	},
 	bullets: {
 		flex: 1,
@@ -99,7 +131,7 @@ var styles = StyleSheet.create({
 	},
 	textBox: {
 		flex: 1,
-		alignItems: 'stretch',
+		justifyContent: 'space-around',
 		backgroundColor: 'white',
 		padding: 20,
 	},
@@ -107,9 +139,14 @@ var styles = StyleSheet.create({
 		color: '#D93908',
 		fontFamily: 'AvenirNext-Regular',
 		fontSize: 20,
-		margin: 5,
-//		lineHeight: 5,
-	}
+		marginLeft: 7,
+	},
+	leftBorder: {
+		borderLeftWidth: 5,
+		borderLeftColor: '#3b0000',
+		backgroundColor: 'rgba(70, 0, 0, 0.08)',
+		padding: 3,
+	},
 });
 
 module.exports = Start;
