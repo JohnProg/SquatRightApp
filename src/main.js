@@ -15,8 +15,8 @@ module.exports = React.createClass({
 	onPressStart: function() {
 		this.props.navigator.push({name: 'start'});
 	},
-	onPressInstructions: function() {
-		this.props.navigator.push({name: 'instructions'});
+	onPressAbout: function() {
+		this.props.navigator.push({name: 'about'});
 	},
 	
 	
@@ -38,7 +38,7 @@ module.exports = React.createClass({
 							
 					<View style={styles.menu}>
 						<Button press={this.onPressStart}>Start</Button>
-						<Button>About</Button>
+						<Button press={this.onPressAbout}>About</Button>
 					</View>
 				</View>
 

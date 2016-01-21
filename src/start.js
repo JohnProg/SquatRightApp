@@ -24,6 +24,7 @@ var Start = React.createClass({
     };
   },
 	componentDidMount: function () {
+		///////////////////Function for gyroscope to read squat depth
     DeviceMotion.startDeviceMotionUpdates(1000/60, (data) => {
       if (data.attitude.pitch <= 0) {
 				VibrationIOS.vibrate()
@@ -67,7 +68,7 @@ var Start = React.createClass({
 						<Text style={styles.text}>Start your squat set.</Text>
 					</View>
 					<View style={styles.leftBorder}>
-						<Text style={styles.text}>Phone will vibrate each time you have reached parallel depth and beyond.</Text>
+						<Text style={styles.text}>Phone will vibrate each time you have gone beyond parallel.</Text>
 					</View>
 				</View>
 			</View>
@@ -130,8 +131,8 @@ var styles = StyleSheet.create({
 		justifyContent: 'center',
 	},
 	textBox: {
-		flex: 1,
-		justifyContent: 'space-around',
+//		flex: 1,
+//		justifyContent: 'space-around',
 		backgroundColor: 'white',
 		padding: 20,
 	},
@@ -146,6 +147,7 @@ var styles = StyleSheet.create({
 		borderLeftColor: '#3b0000',
 		backgroundColor: 'rgba(70, 0, 0, 0.08)',
 		padding: 3,
+		margin: 3,
 	},
 });
 

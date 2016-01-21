@@ -7,7 +7,7 @@
 var React = require('react-native');
 var Start = require('./src/start');
 var Main = require('./src/main');
-var Instructions = require('./src/instructions');
+var About = require('./src/about');
 var {
   AppRegistry,
   StyleSheet,
@@ -18,7 +18,7 @@ var {
 var ROUTES = {
 	start: Start,
 	main: Main,
-	instructions: Instructions
+	about: About,
 }
 
 var SquatRight = React.createClass({
