@@ -5,7 +5,6 @@
 'use strict';
 
 var React = require('react-native');
-var DeviceMotion = require('./../DeviceMotion.ios.js');
 var {
   StyleSheet,
   Text,
@@ -55,7 +54,7 @@ handleLink: {
      	</View>
 {/*Middle view with image*/}
 			<View style={styles.illustration}>
-				<Image style={styles.image} source={require('./../images/model.png')}></Image>
+				<Image style={styles.image} source={require('./../images/modelSquat.png')}></Image>
 			</View>
 {/****** bottom view with instructions ******/}
 			<ScrollView style={styles.bullets}>
@@ -145,7 +144,7 @@ var styles = StyleSheet.create({
 	},
 	image: {
 		height: 300,
-		width: 230,
+		width: 250,
 	},
 	bullets: {
 		flex: 1,
@@ -172,6 +171,7 @@ var styles = StyleSheet.create({
 	},
 	link: {
 		marginLeft: 7,
+		marginRight: 7,
 		fontSize: 16,
 		color: '#0096e5',
 		padding: 4,
@@ -181,6 +181,7 @@ var styles = StyleSheet.create({
 	},
 	notice: {
 		marginTop: 10,
+		marginBottom: 10,
 		marginLeft: 7,
 		fontSize: 16,
 		color: '#D93908',
