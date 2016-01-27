@@ -32,3 +32,11 @@ local.properties
 #
 node_modules/
 npm-debug.log
+
+#start component
+#
+src/start.js
+
+#device motion js file
+#
+DeviceMotion.ios.js
