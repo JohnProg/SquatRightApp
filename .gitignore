@@ -28,6 +28,11 @@ project.xcworkspace
 .gradle
 local.properties
 
+#Android files
+#
+android/
+index.android.js
+
 # node.js
 #
 node_modules/
